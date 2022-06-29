@@ -32,6 +32,7 @@ SHORTLINKBOT = Client('ShortlinkBot',
              workers=50,
              sleep_threshold=10)
             
+BITLY_KEY = "96bbcd78781ecd9018670be6c876452af049084a"
 
 @SHORTLINKBOT.on_message(filters.command(['start','help']) & filters.user(Config.USERS))
 async def start(_, update):
