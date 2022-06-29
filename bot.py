@@ -42,7 +42,7 @@ async def start(_, update):
         reply_markup=markup,
         quote=True)
 
-@SHORTLINKBOT.on_message(filters.user(Config.USERS & filters.regex(pattern=".*http.*"))
+@SHORTLINKBOT.on_message(filters.user(filters.regex(pattern=".*http.*") & filters.user(Config.USERS))
 async def link_handler(_, update):
     link = update.matches[0].group(0)
     shortened_url, Err = get_shortlink(link)
