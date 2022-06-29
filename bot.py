@@ -18,6 +18,7 @@ from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 from pyshorteners import Shortener
 from config import *
+from sample_config import Config
 
 
 SHORTLINKBOT = Client('ShortlinkBot',
