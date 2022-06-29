@@ -21,9 +21,9 @@ from config import *
 from sample_config import Config
 
 API_ID=10293305
-API_HASH="9b3bb6ac48fbbc1195e4657fe30858e9"
-BOT_TOKEN=5519560955:AAHkEKKpNMIoptfSbk9vV5q-Wh5XTOmg8n4
-USERS=("1802569102 1016768333").split(" ")]
+API_HASH = "9b3bb6ac48fbbc1195e4657fe30858e9"
+BOT_TOKEN = "5519560955:AAHkEKKpNMIoptfSbk9vV5q-Wh5XTOmg8n4"
+USERS = ("1802569102 1016768333").split(" ")]
 
 
 SHORTLINKBOT = Client('ShortlinkBot',
