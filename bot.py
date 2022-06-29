@@ -34,7 +34,7 @@ SHORTLINKBOT = Client('ShortlinkBot',
             
 BITLY_KEY = "96bbcd78781ecd9018670be6c876452af049084a"
 
-@SHORTLINKBOT.on_message(filters.command(['start','help']) & filters.(Config.USERS))
+@SHORTLINKBOT.on_message(filters.command(['start','help']) & filters.Config.USERS))
 async def start(_, update):
     markup = InlineKeyboardMarkup([[InlineKeyboardButton("Made By", url=f"https://t.me/Stay007")]])
     await update.reply(
@@ -43,7 +43,7 @@ async def start(_, update):
         reply_markup=markup,
         quote=True)
 
-@SHORTLINKBOT.on_message(filters.regex(r"(?:(?:https?|ftp):\/\/)?[\w/\-?=%.]+\.[\w/\-?=%.]+")) & filters.(Config.USERS))
+@SHORTLINKBOT.on_message(filters.regex(r"(?:(?:https?|ftp):\/\/)?[\w/\-?=%.]+\.[\w/\-?=%.]+")) & filters.Config.USERS))
 async def link_handler(_, update):
     link = update.matches[0].group(0)
     shortened_url, Err = get_shortlink(link)
