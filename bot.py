@@ -26,9 +26,9 @@ else:
     from config import Config
 
 SHORTLINKBOT = Client('ShortlinkBot',
-             api_id=API_ID,
-             api_hash=API_HASH,
-             bot_token=BOT_TOKEN,
+             api_id=Config.API_ID,
+             api_hash=Config.API_HASH,
+             bot_token=Config.BOT_TOKEN,
              workers=50,
              sleep_threshold=10)
             
