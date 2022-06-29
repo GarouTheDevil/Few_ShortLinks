@@ -27,7 +27,7 @@ SHORTLINKBOT = Client('ShortlinkBot',
              sleep_threshold=10)
             
 
-@SHORTLINKBOT.on_message(filters.command(['start','help']) & filters.user(USERS))
+@SHORTLINKBOT.on_message(filters.command(['start','help']) & filters.user(Config.USERS))
 async def start(_, update):
     markup = InlineKeyboardMarkup([[InlineKeyboardButton("Made By", url=f"https://t.me/{OWNER}")]])
     await update.reply(
@@ -36,7 +36,7 @@ async def start(_, update):
         reply_markup=markup,
         quote=True)
 
-@SHORTLINKBOT.on_message(filters.regex(r'https?://[^\s]+')) & filters.user(USERS)
+@SHORTLINKBOT.on_message(filters.regex(r'https?://[^\s]+')) & filters.user(Config.USERS)
 async def link_handler(_, update):
     link = update.matches[0].group(0)
     shortened_url, Err = get_shortlink(link)
