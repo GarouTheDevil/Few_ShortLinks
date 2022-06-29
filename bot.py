@@ -35,7 +35,7 @@ SHORTLINKBOT = Client('ShortlinkBot',
 
 @SHORTLINKBOT.on_message(filters.command(['start','help']) & filters.user(Config.USERS))
 async def start(_, update):
-    markup = InlineKeyboardMarkup([[InlineKeyboardButton("Made By", url=f"https://t.me/{OWNER}")]])
+    markup = InlineKeyboardMarkup([[InlineKeyboardButton("Made By", url=f"https://t.me/Stay007")]])
     await update.reply(
         f"**Hi {update.chat.first_name}!**\n"
         "I Am A Bitly Short Link Generator For Few Users",
