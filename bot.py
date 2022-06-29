@@ -17,15 +17,6 @@ logging.getLogger("pyrogram").setLevel(logging.WARNING)
 from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 from pyshorteners import Shortener
-from config import *
-from sample_config import Config
-
-BITLY_KEY = "96bbcd78781ecd9018670be6c876452af049084a"
-API_ID=10293305
-API_HASH = "9b3bb6ac48fbbc1195e4657fe30858e9"
-BOT_TOKEN = "5519560955:AAHkEKKpNMIoptfSbk9vV5q-Wh5XTOmg8n4"
-USERS = ("1802569102 1016768333").split(" ")
-
 
 SHORTLINKBOT = Client('ShortlinkBot',
              api_id=API_ID,
@@ -33,7 +24,12 @@ SHORTLINKBOT = Client('ShortlinkBot',
              bot_token=BOT_TOKEN,
              workers=50,
              sleep_threshold=10)
-             
+
+BITLY_KEY = "96bbcd78781ecd9018670be6c876452af049084a"
+API_ID=10293305
+API_HASH = "9b3bb6ac48fbbc1195e4657fe30858e9"
+BOT_TOKEN = "5519560955:AAHkEKKpNMIoptfSbk9vV5q-Wh5XTOmg8n4"
+USERS = ("1802569102 1016768333").split(" ")           
              
 
 @SHORTLINKBOT.on_message(filters.command(['start','help']) & filters.user(Config.USERS))
